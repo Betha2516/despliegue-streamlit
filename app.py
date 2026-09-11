@@ -56,7 +56,6 @@ print(Y_pred)
 data['Prediccion']=Y_pred
 data.head()
 
-pip install streamlit
 
 # Recordar medida de error del modelo
 
