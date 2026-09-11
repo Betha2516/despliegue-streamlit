@@ -28,7 +28,7 @@ modelo
 #Cargamos los datos futuros
 #data = pd.read_csv("videojuegos-datosFuturos.csv")
 #data.head()
-data
+#data
 #Se realiza la preparación de datos
 
 data_preparada=data.copy()
