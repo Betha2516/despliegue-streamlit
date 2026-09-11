@@ -31,6 +31,23 @@ modelo
 #data
 #Se realiza la preparación de datos
 
+#Se crea interfaz gráfica con streamlit para captura de los datos
+
+import streamlit as st
+
+st.title('Predicción de inversión en una tienda de videojuegos')
+
+Edad = st.slider('Edad', min_value=14, max_value=52, value=20, step=1)
+videojuego = st.selectbox('Videojuego', ["'Mass Effect'","'Battlefield'", "'Fifa'","'KOA: Reckoning'","'Crysis'","'Sim City'","'Dead Space'","'F1'"])
+Plataforma = st.selectbox('Plataforma', ["'Play Station'", "'Xbox'","PC","Otros"])
+Sexo = st.selectbox('Sexo', ['Hombre', 'Mujer'])
+Consumidor_habitual = st.selectbox('Consumidor_habitual', ['True', 'False'])
+
+
+#Dataframe
+datos = [[Edad, videojuego,Plataforma,Sexo,Consumidor_habitual]]
+data = pd.DataFrame(datos, columns=['Edad', 'videojuego','Plataforma','Sexo','Consumidor_habitual']) #Dataframe con los mismos nombres de variables
+
 data_preparada=data.copy()
 
 
@@ -64,20 +81,5 @@ st.warning("El modelo tiene un error del 16% (mape: error porcentual)")
 #Interfaz gráfica
 
 
-#Se crea interfaz gráfica con streamlit para captura de los datos
 
-import streamlit as st
-
-st.title('Predicción de inversión en una tienda de videojuegos')
-
-Edad = st.slider('Edad', min_value=14, max_value=52, value=20, step=1)
-videojuego = st.selectbox('Videojuego', ["'Mass Effect'","'Battlefield'", "'Fifa'","'KOA: Reckoning'","'Crysis'","'Sim City'","'Dead Space'","'F1'"])
-Plataforma = st.selectbox('Plataforma', ["'Play Station'", "'Xbox'","PC","Otros"])
-Sexo = st.selectbox('Sexo', ['Hombre', 'Mujer'])
-Consumidor_habitual = st.selectbox('Consumidor_habitual', ['True', 'False'])
-
-
-#Dataframe
-datos = [[Edad, videojuego,Plataforma,Sexo,Consumidor_habitual]]
-data = pd.DataFrame(datos, columns=['Edad', 'videojuego','Plataforma','Sexo','Consumidor_habitual']) #Dataframe con los mismos nombres de variables
 
